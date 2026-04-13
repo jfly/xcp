@@ -83,7 +83,7 @@ pub fn create_sparse(file: &Path, head: u64, tail: u64) -> Result<u64, Error> {
     let data = "c00lc0d3";
     let len = 4096u64 * 4096 + data.len() as u64 + tail;
 
-    let out = Command::new("/usr/bin/truncate")
+    let out = Command::new("truncate")
         .args(["-s", len.to_string().as_str(), file.to_str().unwrap()])
         .output()?;
     assert!(out.status.success());

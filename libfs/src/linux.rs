@@ -344,7 +344,7 @@ mod tests {
 
         let dir = tempdir()?;
         let file = dir.path().join("sparse.bin");
-        let out = Command::new("/usr/bin/truncate")
+        let out = Command::new("truncate")
             .args(["-s", "1M", file.to_str().unwrap()])
             .output()?;
         assert!(out.status.success());
@@ -369,7 +369,7 @@ mod tests {
 
         let dir = tempdir()?;
         let file = dir.path().join("sparse.bin");
-        let out = Command::new("/usr/bin/truncate")
+        let out = Command::new("truncate")
             .args(["-s", "1M", file.to_str().unwrap()])
             .output()?;
         assert!(out.status.success());
@@ -396,7 +396,7 @@ mod tests {
             write!(fd, "{data}")?;
         }
 
-        let out = Command::new("/usr/bin/truncate")
+        let out = Command::new("truncate")
             .args(["-s", "1M", file.to_str().unwrap()])
             .output()?;
         assert!(out.status.success());
@@ -425,7 +425,7 @@ mod tests {
             write!(fd, "{data}")?;
         }
 
-        let out = Command::new("/usr/bin/truncate")
+        let out = Command::new("truncate")
             .args(["-s", "1M", file.to_str().unwrap()])
             .output()?;
         assert!(out.status.success());
@@ -475,7 +475,7 @@ mod tests {
             write!(fd, "{data}")?;
         }
 
-        let out = Command::new("/usr/bin/truncate")
+        let out = Command::new("truncate")
             .args(["-s", "1M", file.to_str().unwrap()])
             .output()?;
         assert!(out.status.success());
@@ -515,7 +515,7 @@ mod tests {
             write!(fd, "{data}")?;
         }
 
-        let out = Command::new("/usr/bin/truncate")
+        let out = Command::new("truncate")
             .args(["-s", "1M", file.to_str().unwrap()])
             .output()?;
         assert!(out.status.success());
@@ -582,7 +582,7 @@ mod tests {
         let dir = tempdir()?;
         let file = dir.path().join("sparse.bin");
 
-        let out = Command::new("/usr/bin/truncate")
+        let out = Command::new("truncate")
             .args(["-s", "1M", file.to_str().unwrap()])
             .output()?;
         assert!(out.status.success());
@@ -619,7 +619,7 @@ mod tests {
         let dir = tempdir()?;
         let file = dir.path().join("sparse.bin");
 
-        let out = Command::new("/usr/bin/truncate")
+        let out = Command::new("truncate")
             .args(["-s", "1M", file.to_str().unwrap()])
             .output()?;
         assert!(out.status.success());
@@ -647,7 +647,7 @@ mod tests {
             write!(fd, "{data}")?;
         }
 
-        let out = Command::new("/usr/bin/truncate")
+        let out = Command::new("truncate")
             .args(["-s", "1M", file.to_str().unwrap()])
             .output()?;
         assert!(out.status.success());
@@ -687,7 +687,7 @@ mod tests {
         let dir = tempdir()?;
         let file = dir.path().join("sparse.bin");
 
-        let out = Command::new("/usr/bin/truncate")
+        let out = Command::new("truncate")
             .args(["-s", "1M", file.to_str().unwrap()])
             .output()?;
         assert!(out.status.success());
@@ -807,7 +807,7 @@ mod tests {
             write!(fd, "{data}")?;
         }
 
-        let acl = AclEntry::allow_user("mail", Perm::READ, None);
+        let acl = AclEntry::allow_user("root", Perm::READ, None);
 
         let mut from_acl = getfacl(&from, None)?;
         from_acl.push(acl.clone());

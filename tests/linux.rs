@@ -226,7 +226,7 @@ mod test {
         let from = dir.path().join("sparse.bin");
         let to = dir.path().join("target.bin");
 
-        let out = Command::new("/usr/bin/truncate")
+        let out = Command::new("truncate")
             .args(["-s", "1M", from.to_str().unwrap()])
             .output().unwrap();
         assert!(out.status.success());
